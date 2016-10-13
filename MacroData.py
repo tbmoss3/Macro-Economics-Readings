@@ -19,6 +19,7 @@ for t in series:
   info = fred.get_series_info(t)
   print info['title']
   print info['frequency']
+  print info['units']
   print " " 
   print "LATEST VALUES:"
   print data.tail()
