@@ -1,5 +1,11 @@
-"""This is a simple project using the FRED API that reads in a list of data points that can be fully customized"""
+"""
 
+This is a simple project using the FRED API that reads in a list of data points that can be fully customized
+
+Need to:
+add in graphs 
+
+"""
 from fredapi import Fred
 
 fred = Fred(api_key = """key here""")
@@ -12,7 +18,7 @@ series = ['SP500','GDP', 'A067RL1A156NBEA', 'CPIAUCSL', 'A191RL1Q225SBEA', 'DGS1
           'T10Y2Y', 'HOUST', 'DGS30', 'MORTG', 'DEXCHUS', 'BUSLOANS', 'UEMPMEAN',
           'EXPGSCA', 'NETEXP', 'A067RP1A027NBEA', 'FYFSD']
 
-#strips the data down to the title, frequency of reporting, and the latest values
+#strips the data down to the title, frequency of reporting, units,  and the latest values
 
 for t in series:
   data = fred.get_series(t)
