@@ -2,11 +2,11 @@
 
 This is a simple project using the FRED API that reads in a list of data points that can be fully customized
 
-Need to:
-add in graphs 
 
 """
 from fredapi import Fred
+import pandas as pd
+import matplotlib.pyplot as plt
 
 fred = Fred(api_key = """key here""")
 
@@ -30,3 +30,23 @@ for t in series:
   print "LATEST VALUES:"
   print data.tail()
   print " "
+
+
+#saves a PDF graph in the folder where code is stored
+
+for i in series:
+    info=fred.get_series_info(i)
+    title=info['title']
+    
+    df={}
+    df[title]=fred.get_series(i)
+    df=pd.DataFrame(df)
+
+    df.plot()
+    base_filename=title
+    suffix = '.pdf'
+    plt.savefig(title+suffix)
+
+
+
+
