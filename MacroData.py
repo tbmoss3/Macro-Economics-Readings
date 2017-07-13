@@ -21,15 +21,15 @@ series = ['SP500','GDP', 'A067RL1A156NBEA', 'CPIAUCSL', 'A191RL1Q225SBEA', 'DGS1
 #strips the data down to the title, frequency of reporting, units,  and the latest values
 
 for t in series:
-  data = fred.get_series(t)
-  info = fred.get_series_info(t)
-  print info['title']
-  print info['frequency']
-  print info['units']
-  print " " 
-  print "LATEST VALUES:"
-  print data.tail()
-  print " "
+    data = fred.get_series(t)
+    info = fred.get_series_info(t)
+    print info['title']
+    print info['frequency']
+    print info['units']
+    print " " 
+    print "LATEST VALUES:"
+    print data.tail()
+    print " "
 
 
 #saves a PDF graph in the folder where code is stored
